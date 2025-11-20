@@ -15,7 +15,8 @@ export default function Login() {
         const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
 
         try {
-            const res = await fetch(`http://localhost:3000${endpoint}`, {
+	    const res = await fetch(`https://satviksath.shop${endpoint}`, {
+//            const res = await fetch(`http://localhost:3000${endpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: formData.username, password: formData.password }),
