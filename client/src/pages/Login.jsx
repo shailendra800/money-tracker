@@ -15,8 +15,8 @@ export default function Login() {
         const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
 
         try {
-	    const res = await fetch(`https://satviksath.shop${endpoint}`, {
-//            const res = await fetch(`http://localhost:3000${endpoint}`, {
+            const res = await fetch(`https://satviksath.shop${endpoint}`, {
+                //            const res = await fetch(`http://localhost:3000${endpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: formData.username, password: formData.password }),
@@ -47,7 +47,7 @@ export default function Login() {
                         <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner">
                             <IndianRupee className="w-8 h-8 text-indigo-600" />
                         </div>
-                        <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h2>
+                        <h2 className="text-3xl font-bold text-gray-800 mb-2">Welcome</h2>
                         <p className="text-gray-500">Track your wealth with style</p>
                     </div>
 
