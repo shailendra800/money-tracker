@@ -29,8 +29,8 @@ export default function Dashboard() {
 
         try {
             const [summaryRes, transactionsRes] = await Promise.all([
-                fetch(`http://localhost:3000/api/summary?${queryParams}`, { headers: { Authorization: `Bearer ${token}` } }),
-                fetch(`http://localhost:3000/api/transactions?${queryParams}`, { headers: { Authorization: `Bearer ${token}` } })
+                fetch(`https://satviksath.shop/api/summary?${queryParams}`, { headers: { Authorization: `Bearer ${token}` } }),
+                fetch(`https://satviksath.shop/api/transactions?${queryParams}`, { headers: { Authorization: `Bearer ${token}` } })
             ]);
 
             if (summaryRes.ok) setSummary(await summaryRes.json());
@@ -50,8 +50,8 @@ export default function Dashboard() {
         e.preventDefault();
         const token = localStorage.getItem('token');
         const url = editingId
-            ? `http://localhost:3000/api/transactions/${editingId}`
-            : 'http://localhost:3000/api/transactions';
+            ? `https://satviksath.shop/api/transactions/${editingId}`
+            : 'https://satviksath.shop/api/transactions';
         const method = editingId ? 'PUT' : 'POST';
 
         try {
@@ -91,7 +91,7 @@ export default function Dashboard() {
 
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch(`http://localhost:3000/api/transactions/${id}`, {
+            const res = await fetch(`https://satviksath.shop/api/transactions/${id}`, {
                 method: 'DELETE',
                 headers: { Authorization: `Bearer ${token}` }
             });
